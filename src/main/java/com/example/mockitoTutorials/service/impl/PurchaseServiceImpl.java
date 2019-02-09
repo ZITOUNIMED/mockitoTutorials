@@ -14,8 +14,8 @@ public class PurchaseServiceImpl implements IPurchaseService {
     private PurchaseRepository purchaseRepository;
 
     @Override
-    public Purchase getOne(Long id) {
-        return purchaseRepository.getOne(id);
+    public Purchase findById(Long id) {
+        return purchaseRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -34,4 +34,14 @@ public class PurchaseServiceImpl implements IPurchaseService {
     public Purchase save(Purchase purchase) {
         return purchaseRepository.save(purchase);
     }
+
+	@Override
+	public List<Purchase> findByCustomerId(Long customerId) {
+		return purchaseRepository.findByCustomerId(customerId);
+	}
+	
+	@Override
+	public List<Purchase> findByProductId(Long productId) {
+		return purchaseRepository.findByProductId(productId);
+	}
 }

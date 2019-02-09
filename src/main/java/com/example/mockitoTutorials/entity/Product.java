@@ -10,14 +10,14 @@ public class Product {
     @GeneratedValue
     private Long id;
     private String ref;
-    private float unitPrice;
+    private double unitPrice;
     private int items;
 
     public Product(){
 
     }
 
-    public Product(String ref, float unitPrice, int items) {
+    public Product(String ref, double unitPrice, int items) {
         this.ref = ref;
         this.unitPrice = unitPrice;
         this.items = items;
@@ -31,7 +31,7 @@ public class Product {
         this.ref = ref;
     }
 
-    public void setUnitPrice(float unitPrice) {
+    public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
 
@@ -48,7 +48,7 @@ public class Product {
         return ref;
     }
 
-    public float getUnitPrice() {
+    public double getUnitPrice() {
         return unitPrice;
     }
 
